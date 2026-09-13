@@ -3,28 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polylang Hub - منصة الترجمة الذكية</title>
+  <title>Polylang Hub - منصة الترجمة الذكية والتطوير اللغوي</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
-    body { background-color: #f8f9fa; direction: rtl; color: #333; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-    .app-container { width: 100%; max-width: 400px; display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; }
-    .brand-header { text-align: center; margin-bottom: 24px; width: 100%; }
-    .logo-box { width: 75px; height: 75px; background: linear-gradient(135deg, #e53935, #b71c1c); color: white; display: flex; justify-content: center; align-items: center; border-radius: 20px; margin: 0 auto 12px auto; box-shadow: 0 10px 20px rgba(229, 57, 53, 0.3); font-size: 36px; font-weight: 800; }
-    .brand-header h1 { font-size: 24px; color: #1a1a1a; font-weight: 700; }
-    .brand-header p { font-size: 14px; color: #666; margin-top: 4px; }
-    .login-card { background: white; padding: 28px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); border: 1px solid #eaeaea; width: 100%; }
-    .login-card h2 { font-size: 18px; margin-bottom: 20px; color: #222; }
-    .tabs { display: flex; background: #f1f3f5; border-radius: 10px; padding: 4px; margin-bottom: 20px; }
-    .tab-btn { flex: 1; background: transparent; border: none; padding: 8px; font-weight: 600; color: #666; cursor: pointer; border-radius: 8px; font-family: 'Tajawal'; }
+    body { background-color: #f4f6f9; direction: rtl; color: #333; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 15px; }
+    .app-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; }
+    
+    /* تصميم الهوية البصرية الفاخرة */
+    .brand-header { text-align: center; margin-bottom: 20px; width: 100%; }
+    .logo-box { width: 65px; height: 65px; background: linear-gradient(135deg, #e53935, #b71c1c); color: white; display: flex; justify-content: center; align-items: center; border-radius: 18px; margin: 0 auto 10px auto; box-shadow: 0 8px 20px rgba(229, 57, 53, 0.3); font-size: 32px; font-weight: 800; }
+    .brand-header h1 { font-size: 22px; color: #1a1a1a; font-weight: 800; letter-spacing: -0.5px; }
+    .brand-header p { font-size: 13px; color: #666; margin-top: 2px; }
+
+    .login-card { background: white; padding: 24px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); border: 1px solid #eaeaea; width: 100%; }
+    .login-card h2 { font-size: 17px; margin-bottom: 16px; color: #222; font-weight: 700; }
+    
+    .tabs { display: flex; background: #f1f3f5; border-radius: 10px; padding: 4px; margin-bottom: 18px; }
+    .tab-btn { flex: 1; background: transparent; border: none; padding: 8px; font-weight: 600; color: #666; cursor: pointer; border-radius: 8px; font-family: 'Tajawal'; font-size: 13px; }
     .tab-btn.active { background: white; color: #e53935; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .input-group { margin-bottom: 16px; text-align: right; }
-    .input-group label { display: block; font-size: 13px; color: #555; margin-bottom: 6px; font-weight: 500; }
-    .input-group input, .input-group select, .input-group textarea { width: 100%; padding: 12px 14px; border: 1.5px solid #ddd; border-radius: 10px; font-size: 14px; outline: none; transition: all 0.3s; font-family: 'Tajawal'; }
-    .input-group input:focus, .input-group select:focus, .input-group textarea:focus { border-color: #e53935; box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.1); }
-    .btn-primary { width: 100%; padding: 13px; background-color: #e53935; color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.3s; margin-top: 10px; font-family: 'Tajawal'; }
+
+    .input-group { margin-bottom: 14px; text-align: right; }
+    .input-group label { display: block; font-size: 12px; color: #555; margin-bottom: 5px; font-weight: 600; }
+    .input-group input, .input-group select, .input-group textarea { width: 100%; padding: 11px 13px; border: 1.5px solid #e0e0e0; border-radius: 10px; font-size: 13px; outline: none; transition: all 0.3s; font-family: 'Tajawal'; background: #fff; }
+    .input-group input:focus, .input-group select:focus, .input-group textarea:focus { border-color: #e53935; box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.08); }
+
+    .btn-primary { width: 100%; padding: 12px; background-color: #e53935; color: white; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.3s; font-family: 'Tajawal'; box-shadow: 0 4px 12px rgba(229, 57, 53, 0.2); }
     .btn-primary:hover { background-color: #b71c1c; }
-    .output-box { margin-top: 18px; padding: 12px; background: #f1f3f5; border-radius: 8px; font-size: 12px; color: #444; word-break: break-all; text-align: center; border: 1px dashed #ced4da; }
+    
+    .output-box { margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 8px; font-size: 11px; color: #555; word-break: break-all; text-align: center; border: 1px dashed #ced4da; }
+
+    /* أقسام التدريبات والأكاديمية اللغوية */
+    .hub-section { background: #fafafa; border: 1px solid #eee; border-radius: 12px; padding: 14px; margin-bottom: 15px; }
+    .hub-title { font-size: 14px; font-weight: 700; color: #222; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .badge-pro { background: #fff3e0; color: #e65100; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -33,17 +45,17 @@
     <div class="brand-header">
       <div class="logo-box">P</div>
       <h1>Polylang Hub</h1>
-      <p>منصة الترجمة الذكية والمعتمدة</p>
+      <p>المنظومة الذكية للترجمة، الدبلجة، والتطوير اللغوي</p>
     </div>
 
     <div class="login-card">
       <div class="tabs">
-        <button id="tabLogin" class="tab-btn active" onclick="switchTab('login')">دخول</button>
+        <button id="tabLogin" class="tab-btn active" onclick="switchTab('login')">دخول المنصة</button>
         <button id="tabRegister" class="tab-btn" onclick="switchTab('register')">حساب جديد</button>
       </div>
 
       <div id="loginForm">
-        <h2>تسجيل الدخول</h2>
+        <h2>تسجيل الدخول للنظام</h2>
         <div class="input-group">
           <label>البريد الإلكتروني</label>
           <input type="email" id="loginEmail" placeholder="name@example.com" />
@@ -52,11 +64,11 @@
           <label>كلمة المرور</label>
           <input type="password" id="loginPassword" placeholder="••••••••" />
         </div>
-        <button class="btn-primary" onclick="sendLogin()">تسجيل الدخول</button>
+        <button class="btn-primary" onclick="sendLogin()">دخول لوحة التحكم الذكية</button>
       </div>
 
       <div id="registerForm" style="display: none;">
-        <h2>إنشاء حساب جديد</h2>
+        <h2>إنشاء حساب أكاديمي / مهني</h2>
         <div class="input-group">
           <label>الاسم الكامل</label>
           <input type="text" id="regName" placeholder="اسمك الكريم" />
@@ -70,16 +82,16 @@
           <input type="password" id="regPassword" placeholder="••••••••" />
         </div>
         <div class="input-group">
-          <label>نوع الحساب</label>
+          <label>نوع الحساب المستهدف</label>
           <select id="regRole">
-            <option value="CLIENT">زبون (Client)</option>
-            <option value="TRANSLATOR">مترجم (Translator)</option>
+            <option value="CLIENT">عميل / طالب خدمات (Client)</option>
+            <option value="TRANSLATOR">مترجم محترف / متدرب (Translator)</option>
           </select>
         </div>
-        <button class="btn-primary" onclick="sendRegister()">إنشاء الحساب</button>
+        <button class="btn-primary" onclick="sendRegister()">تأسيس الحساب الآن</button>
       </div>
       
-      <div id="result" class="output-box">جاهز للاتصال بالسيرفر السحابي...</div>
+      <div id="result" class="output-box">جاهز للاتصال بقاعدة البيانات السحابية...</div>
     </div>
   </div>
 
@@ -115,7 +127,7 @@
       }
 
       resultDiv.style.color = "#333";
-      resultDiv.innerText = "جاري إرسال طلب الدخول للسيرفر...";
+      resultDiv.innerText = "جاري التحقق من الهوية عبر السيرفر...";
 
       try {
         const response = await fetch('https://polylang-hub.onrender.com/api/v1/auth/login', {
@@ -127,7 +139,7 @@
         const data = await response.json();
         
         if (response.ok) {
-          showProDashboard(data.user, data.access_token);
+          showMasterDashboard(data.user, data.access_token);
         } else {
           resultDiv.style.color = "#e65100";
           resultDiv.innerText = "⚠ رد السيرفر: " + (data.message || JSON.stringify(data));
@@ -147,12 +159,12 @@
       
       if(!name || !email || !password) {
         resultDiv.style.color = "#e53935";
-        resultDiv.innerText = "الرجاء ملء جميع الحقول لإنشاء الحساب";
+        resultDiv.innerText = "الرجاء ملء جميع الحقول المطلوبة";
         return;
       }
 
       resultDiv.style.color = "#333";
-      resultDiv.innerText = "جاري إنشاء الحساب في قاعدة البيانات...";
+      resultDiv.innerText = "جاري إنشاء الحساب في النظام...";
 
       try {
         const response = await fetch('https://polylang-hub.onrender.com/api/v1/auth/register', {
@@ -176,128 +188,85 @@
       }
     }
 
-    function showProDashboard(user, token) {
+    // لوحة التحكم المتكاملة (الخدمات + التدريبات + الأكاديمية اللغوية)
+    function showMasterDashboard(user, token) {
       const container = document.querySelector('.app-container');
-      container.style.maxWidth = '650px';
+      container.style.maxWidth = '600px';
       
       container.innerHTML = `
         <div class="login-card" style="width: 100%; text-align: right;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f1f3f5; padding-bottom: 15px; margin-bottom: 20px;">
+          <!-- رأس لوحة التحكم -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f1f3f5; padding-bottom: 12px; margin-bottom: 18px;">
             <div>
-              <h2 style="color: #1a1a1a; font-size: 20px; margin-bottom: 2px;">⚡ مرحباً، ${user.name}</h2>
-              <span style="font-size: 11px; background: #ffebee; color: #c62828; padding: 3px 10px; border-radius: 6px; font-weight: 700;">حساب ${user.role} معتمد</span>
+              <h2 style="color: #1a1a1a; font-size: 18px; margin-bottom: 2px;">⚡ أهلاً بك، ${user.name}</h2>
+              <span style="font-size: 10px; background: #ffebee; color: #c62828; padding: 2px 8px; border-radius: 4px; font-weight: 700;">حساب ${user.role} معتمد</span>
             </div>
-            <button onclick="resetApp()" style="background: #f1f3f5; border: none; padding: 8px 12px; border-radius: 8px; font-family: 'Tajawal'; font-size: 13px; cursor: pointer; color: #d32f2f; font-weight: 600;">تسجيل خروج</button>
+            <button onclick="resetApp()" style="background: #f1f3f5; border: none; padding: 6px 10px; border-radius: 6px; font-family: 'Tajawal'; font-size: 12px; cursor: pointer; color: #d32f2f; font-weight: 600;">خروج</button>
           </div>
 
-          <div style="margin-bottom: 20px;">
-            <label style="display: block; font-size: 14px; font-weight: 700; color: #333; margin-bottom: 10px;">اختر قطاع الخدمة المتخصصة:</label>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-              <button onclick="setServiceType('text')" id="srvText" class="srv-btn" style="padding: 10px; border-radius: 8px; border: 1.5px solid #e53935; background: #ffebee; color: #e53935; font-weight: 700; cursor: pointer; font-family: 'Tajawal'; font-size: 13px;">📝 ترجمة مستندات ونصية</button>
-              <button onclick="setServiceType('video')" id="srvVideo" class="srv-btn" style="padding: 10px; border-radius: 8px; border: 1.5px solid #ddd; background: white; color: #666; font-weight: 600; cursor: pointer; font-family: 'Tajawal'; font-size: 13px;">🎬 ترجمة ودبلجة فيديوهات</button>
-            </div>
-          </div>
-
-          <div style="background: #fafafa; padding: 16px; border-radius: 12px; border: 1px solid #eaeaea; margin-bottom: 20px;">
-            <div id="formDynamicContent">
-              <h3 style="font-size: 15px; color: #333; margin-bottom: 12px;">إرسال ملف أو نص للترجمة الدقيقة</h3>
-              <div class="input-group">
-                <label>اتجاة ونطاق اللغات</label>
-                <input type="text" id="orderPair" placeholder="مثال: من الفرنسية إلى العربية (FR -> AR)" />
-              </div>
-              <div class="input-group">
-                <label>المحتوى أو الرابط</label>
-                <textarea id="orderDesc" rows="3" placeholder="أدخل النص أو رابط الفيديو..." style="width: 100%; padding: 12px; border: 1.5px solid #ddd; border-radius: 10px; font-family: 'Tajawal'; outline: none; resize: none;"></textarea>
-              </div>
-            </div>
-            
-            <div class="input-group" style="margin-top: 10px;">
-              <label>مستوى الأفضلية والسرعة</label>
-              <select id="orderSpeed" style="width: 100%; padding: 10px; border: 1.5px solid #ddd; border-radius: 8px; font-family: 'Tajawal'; background: white;">
-                <option value="standard">قياسي (دقة عالية - خلال 24 ساعة)</option>
-                <option value="express">سريع جداً / Express (أولوية قصوى +25%)</option>
+          <!-- 1. قسم الخدمات والطلبات -->
+          <div class="hub-section">
+            <div class="hub-title">🚀 إدارة خدمات الترجمة والدبلجة <span class="badge-pro">احترافي</span></div>
+            <div class="input-group">
+              <label>نوع الخدمة المطلوبة</label>
+              <select id="serviceType">
+                <option value="legal">ترجمة قانونية ومعتمدة (Legal & Certified)</option>
+                <option value="tech">توطين برمجيات ونصوص تقنية (Tech Localization)</option>
+                <option value="video">ترجمة ودبلجة فيديوهات + ملفات SRT (Video Subtitling)</option>
               </select>
             </div>
-
-            <button class="btn-primary" onclick="submitProOrder()" style="margin-top: 15px;">إرسال الطلب وإصدار الفاتورة الذكية</button>
+            <div class="input-group">
+              <label>تفاصيل المشروع أو رابط الملف / الفيديو</label>
+              <textarea id="projDetails" rows="2" placeholder="اكتب التفاصيل هنا..." style="width: 100%; padding: 10px; border: 1.5px solid #ddd; border-radius: 8px; font-family: 'Tajawal'; outline: none; resize: none;"></textarea>
+            </div>
+            <button class="btn-primary" onclick="submitProject()">إرسال المشروع للمنصة</button>
           </div>
 
+          <!-- 2. قسم التدريبات اللغوية وورش العمل للطلاب والمترجمين -->
+          <div class="hub-section">
+            <div class="hub-title">🎓 ورش وتدريبات الترجمة الحية <span class="badge-pro" style="background:#e8f5e9; color:#2e7d32;">أكاديمي</span></div>
+            <p style="font-size: 12px; color: #666; margin-bottom: 10px;">اختر ورشة عمل تدريبية لاكتساب مهارات متقدمة في الترجمة التخصصية وتجاوز الصعوبات اللغوية:</p>
+            <div style="display: grid; gap: 8px; margin-bottom: 10px;">
+              <div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; font-weight: 700;">ورشة توطين المصطلحات القانونية الألمانية</span>
+                <button onclick="alert('تم تسجيلك في ورشة المصطلحات بنجاح!')" style="background: #e53935; color: white; border: none; padding: 5px 10px; border-radius: 6px; font-size: 11px; cursor: pointer; font-family: 'Tajawal';">انضمام</button>
+              </div>
+              <div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 12px; font-weight: 700;">تدريب عملي: ترجمة وتوقيت ملفات الـ SRT</span>
+                <button onclick="alert('تم حجز مقعدك في تدريب الـ SRT بنجاح!')" style="background: #e53935; color: white; border: none; padding: 5px 10px; border-radius: 6px; font-size: 11px; cursor: pointer; font-family: 'Tajawal';">انضمام</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. سجل الطلبات والمشاريع النشطة -->
           <div>
-            <h3 style="font-size: 15px; color: #333; margin-bottom: 10px;">سجل مشاريعك وطلباتك النشطة</h3>
-            <div id="proOrdersList" style="background: #f1f3f5; padding: 16px; border-radius: 10px; text-align: center; color: #666; font-size: 13px; border: 1px dashed #ced4da;">
-              لا توجد طلبات نشطة حالياً. ابدأ بإرسال مشروعك الأول!
+            <div class="hub-title">📋 سجل المشاريع والطلبات النشطة</div>
+            <div id="userActivityLog" style="background: #f1f3f5; padding: 12px; border-radius: 8px; text-align: center; color: #666; font-size: 12px; border: 1px dashed #ced4da;">
+              لا توجد طلبات مسجلة حتى الآن.
             </div>
           </div>
         </div>
       `;
     }
 
-    let currentService = 'text';
-    function setServiceType(type) {
-      currentService = type;
-      const srvText = document.getElementById('srvText');
-      const srvVideo = document.getElementById('srvVideo');
-      const content = document.getElementById('formDynamicContent');
+    function submitProject() {
+      const type = document.getElementById('serviceType').value;
+      const details = document.getElementById('projDetails').value;
+      const log = document.getElementById('userActivityLog');
 
-      if(type === 'text') {
-        srvText.style.background = "#ffebee"; srvText.style.color = "#e53935"; srvText.style.borderColor = "#e53935";
-        srvVideo.style.background = "white"; srvVideo.style.color = "#666"; srvVideo.style.borderColor = "#ddd";
-        content.innerHTML = `
-          <h3 style="font-size: 15px; color: #333; margin-bottom: 12px;">إرسال ملف أو نص للترجمة القانونية والتقنية</h3>
-          <div class="input-group">
-            <label>اتجاه اللغات</label>
-            <input type="text" id="orderPair" placeholder="مثال: من العربية للألمانية (AR -> DE)" />
-          </div>
-          <div class="input-group">
-            <label>النص أو تفاصيل الملف</label>
-            <textarea id="orderDesc" rows="3" placeholder="اكتب النص المراد ترجمته هنا..." style="width: 100%; padding: 12px; border: 1.5px solid #ddd; border-radius: 10px; font-family: 'Tajawal'; outline: none; resize: none;"></textarea>
-          </div>
-        `;
-      } else {
-        srvVideo.style.background = "#ffebee"; srvVideo.style.color = "#e53935"; srvVideo.style.borderColor = "#e53935";
-        srvText.style.background = "white"; srvText.style.color = "#666"; srvText.style.borderColor = "#ddd";
-        content.innerHTML = `
-          <h3 style="font-size: 15px; color: #333; margin-bottom: 12px;">ترجمة ودبلجة ملفات الفيديو وملفات التوقيت (SRT)</h3>
-          <div class="input-group">
-            <label>رابط الفيديو أو اللغات المستهدفة</label>
-            <input type="text" id="orderPair" placeholder="رابط الفيديو (يوتيوب وغيرها)" />
-          </div>
-          <div class="input-group">
-            <label>مواصفات الترجمة المرئية</label>
-            <textarea id="orderDesc" rows="3" placeholder="نوع الترجمة المرئية أو تفاصيل الدبلجة..." style="width: 100%; padding: 12px; border: 1.5px solid #ddd; border-radius: 10px; font-family: 'Tajawal'; outline: none; resize: none;"></textarea>
-          </div>
-        `;
-      }
-    }
-
-    function submitProOrder() {
-      const pair = document.getElementById('orderPair').value;
-      const desc = document.getElementById('orderDesc').value;
-      const speed = document.getElementById('orderSpeed').value;
-      const list = document.getElementById('proOrdersList');
-
-      if(!pair || !desc) {
-        alert("الرجاء ملء حقول اللغات والتفاصيل المطلوبة");
+      if(!details) {
+        alert("الرجاء إدخال تفاصيل المشروع أو الرابط");
         return;
       }
 
-      const serviceLabel = currentService === 'text' ? '📝 ترجمة مستند' : '🎬 ترجمة فيديو';
-      const speedLabel = speed === 'express' ? '⚡ سريع جداً (Express)' : '🛡 قياسي معتمد';
-
-      list.innerHTML = `
-        <div style="background: white; padding: 12px; border-radius: 10px; text-align: right; border: 1px solid #ddd;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span style="font-weight: 700; color: #e53935; font-size: 14px;">${serviceLabel}: ${pair}</span>
-            <span style="font-size: 10px; background: #e8f5e9; color: #2e7d32; padding: 2px 6px; border-radius: 4px; font-weight: bold;">قيد المعالجة</span>
-          </div>
-          <p style="color: #444; font-size: 12px; margin-bottom: 6px;">التفاصيل: ${desc}</p>
-          <div style="font-size: 11px; color: #666; border-top: 1px solid #f1f3f5; padding-top: 6px; display: flex; justify-content: space-between;">
-            <span>الأولوية: <strong>${speedLabel}</strong></span>
-            <span style="color: #1976d2; font-weight: bold;">جاري ربط المترجم...</span>
-          </div>
+      log.innerHTML = `
+        <div style="background: white; padding: 10px; border-radius: 6px; text-align: right; border: 1px solid #ddd;">
+          <p style="font-weight: 700; color: #e53935; font-size: 12px; margin-bottom: 2px;">نوع الخدمة: ${type}</p>
+          <p style="color: #444; font-size: 11px; margin-bottom: 4px;">التفاصيل: ${details}</p>
+          <span style="font-size: 10px; color: #2e7d32; font-weight: bold;">✓ تم إرسال الطلب وإدخاله في النظام بنجاح</span>
         </div>
       `;
-      alert("تم إرسال المشروع بنجاح إلى شبكة المترجمين!");
+      alert("تم إرسال المشروع بنجاح إلى شبكة المترجمين الذكية!");
     }
 
     function resetApp() {
